@@ -34,3 +34,7 @@ To install these dotfiles without Git:
 ```bash
 cd; curl -#L https://github.com/aanselmo/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,LICENSE-MIT.txt}
 ```
+
+## Resources
+
+[Brew’ing PHP, MySQL & Nginx on Mac OS X](http://rtcamp.com/tutorials/mac/osx-brew-php-mysql-nginx/)
