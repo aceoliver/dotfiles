@@ -1,5 +1,5 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/ADT/sdk/platform-tools:$HOME/ADT/sdk/tools:$HOME/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/ADT/sdk/tools:$HOME/bin:$HOME/ADT/sdk/platform-tools:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
