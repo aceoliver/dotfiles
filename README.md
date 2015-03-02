@@ -84,7 +84,7 @@ When setting up a new Mac, you may want to install some common [Homebrew](http:/
 
 ## Thanks to…
 
-[Mathias's](https://github.com/mathiasbynens/dotfiles/) project fork.
+[Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles/)
 
 ## Resources
 [Brew’ing PHP, MySQL & Nginx on Mac OS X](http://rtcamp.com/tutorials/mac/osx-brew-php-mysql-nginx/)
