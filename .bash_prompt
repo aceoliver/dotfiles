@@ -1,3 +1,4 @@
+#!/bin/bash
 # Shell prompt based on the Solarized Dark theme.
 # Screenshot: http://i.imgur.com/EkEtphC.png
 # Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
@@ -59,6 +60,38 @@ prompt_git() {
 	fi;
 }
 
+# Determine the branch/state information for this Mercurial repository.
+function prompt_hg {
+	local s=''
+	local branchName=$(hg branch 2>/dev/null)
+
+	if [ -n "${branchName}" ]; then
+		hg_status="$(hg status -m -S | wc -l)"
+		if [ "${hg_status}" -ne "0" ]; then
+			s+="!"
+		fi
+
+		hg_status="$(hg status -a -S | wc -l)"
+		if [ "${hg_status}" -ne "0" ]; then
+			s+="+"
+		fi
+
+		hg_status="$(hg status -d -S | wc -l)"
+		if [ "${hg_status}" -ne "0" ]; then
+			s+="-"
+		fi
+
+		hg_status="$(hg status -u -S | wc -l)"
+		if [ "${hg_status}" -ne "0" ]; then
+			s+="?"
+		fi
+
+		[ -n "${s}" ] && s=" [${s}]";
+
+		echo -e "${1}${branchName}${blue}${s}";
+	fi
+}
+
 if tput setaf 1 &> /dev/null; then
 	tput sgr0; # reset colors
 	bold=$(tput bold);
@@ -112,6 +145,7 @@ PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\] in ";
 PS1+="\[${green}\]\w"; # working directory
 PS1+="\$(prompt_git \"${white} on ${violet}\")"; # Git repository details
+PS1+="\$(prompt_hg \"${white} on ${violet}\")"; # Mercurial repository details
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
