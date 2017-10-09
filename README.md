@@ -17,7 +17,7 @@ You can clone the repository wherever you want. (I like to keep it in `~/Project
 git clone https://github.com/aceoliver/dotfiles.git && cd dotfiles && source bootstrap.sh
 ```
 
-To update, `cd` into˙ your local `dotfiles` repository and then:
+To update, `cd` into your local `dotfiles` repository and then:
 
 ```bash
 source bootstrap.sh
@@ -78,7 +78,7 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 
 ### Install Homebrew formulae
 
-When setting up a new Mac, you may want to install some common [Homebrew](http://brew.sh/) formulae (after installing Homebrew, of course):
+When setting up a new Mac, you may want to install some common [Homebrew](https://brew.sh/) formulae (after installing Homebrew, of course):
 
 ```bash
 ./brew.sh
